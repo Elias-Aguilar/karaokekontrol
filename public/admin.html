@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin · Karaoke</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <a class="brand" href="/">Karaoke</a>
+      <span class="muted">Admin</span>
+    </div>
+
+    <section class="card stack" id="login-screen">
+      <h1>Panel</h1>
+      <p class="muted">PIN inicial: karaoke. Después lo podés cambiar acá.</p>
+      <form id="login-form" class="row">
+        <input id="pin" type="password" name="pin" autocomplete="current-password" placeholder="PIN" required>
+        <button type="submit">Entrar</button>
+      </form>
+      <p class="error" id="login-error" role="alert"></p>
+    </section>
+
+    <div id="app-screen" hidden class="stack">
+      <section class="card stack">
+        <h1>Ajustes</h1>
+        <form id="settings-form" class="stack">
+          <label>Máximo de canciones por invitado
+            <input id="max-songs" name="maxSongs" type="number" min="1" max="20" required>
+          </label>
+          <label>Canciones por turno
+            <input id="songs-per-turn" name="songsPerTurn" type="number" min="1" max="20" required>
+          </label>
+          <label>Segundos de «Prepárate»
+            <input id="announce-seconds" name="announceSeconds" type="number" min="0" max="120" required>
+          </label>
+          <label>Nuevo PIN
+            <input id="new-pin" name="pin" type="password" autocomplete="new-password" placeholder="Vacío para dejar el actual" minlength="4" maxlength="32">
+          </label>
+          <div class="row">
+            <button type="submit">Guardar</button>
+          </div>
+        </form>
+        <p class="error" id="settings-error" role="alert"></p>
+      </section>
+
+      <section class="card stack">
+        <h2>Ronda</h2>
+        <p class="muted">El orden de esta lista es el orden de reproducción. La canción en curso sigue, salvo que borres esa canción o al invitado que está cantando.</p>
+        <div id="guests" class="stack"></div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

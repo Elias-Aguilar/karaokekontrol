@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invitados · Karaoke</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body class="page">
+  <main class="wrap">
+    <div class="top">
+      <a class="brand" href="/">Karaoke</a>
+      <span class="muted">Invitados</span>
+    </div>
+
+    <section class="card stack" id="name-screen">
+      <h1>¿Cómo te llamás?</h1>
+      <p class="muted">Este celular queda asociado a tu nombre. Tus canciones entran a la ronda en el orden en que llegaste.</p>
+      <form id="name-form" class="row">
+        <input id="name" name="name" maxlength="40" autocomplete="nickname" placeholder="Tu nombre" required>
+        <button type="submit">Entrar</button>
+      </form>
+      <p class="error" id="name-error" role="alert"></p>
+    </section>
+
+    <section class="card stack" id="app-screen" hidden>
+      <div class="top">
+        <h1 id="hello">Hola</h1>
+        <p class="status" id="status"></p>
+      </div>
+      <p class="muted" id="place"></p>
+      <form id="song-form" class="row">
+        <div class="field">
+          <input id="url" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=..." required>
+          <button type="button" class="clear-input" id="clear-url" hidden aria-label="Limpiar enlace">×</button>
+        </div>
+        <button type="submit">Agregar</button>
+      </form>
+      <p class="muted">Antes de sumarla, comprobamos que YouTube permita reproducirla en el visor.</p>
+      <p class="slots" id="slots"></p>
+      <p class="error" id="song-error" role="alert"></p>
+      <ul class="song-list" id="songs"></ul>
+    </section>
+  </main>
+  <footer class="credit">Aguilar Global Tech - Elias Aguilar - 2026</footer>
+  <script type="module" src="/js/invitados.js"></script>
+</body>
+</html>

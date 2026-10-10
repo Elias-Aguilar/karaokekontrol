@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Visor · Karaoke</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <p class="visor-error" id="error" role="alert"></p>
+  <main class="stage">
+    <h1 class="legend" id="legend">Esperando canciones</h1>
+    <p class="sub" id="sub">Cuando alguien agregue un enlace, arranca el turno</p>
+    <p class="countdown" id="countdown"></p>
+    <div class="screen is-hidden" id="screen">
+      <div id="player"></div>
+    </div>
+  </main>
+  <div class="controls">
+    <button type="button" id="pause" class="secondary" disabled>Pausar</button>
+    <p class="now-name" id="now"></p>
+    <button type="button" id="skip" disabled>Saltar</button>
+  </div>
+  <div class="arm" id="arm">
+    <div class="arm-card card stack">
+      <h2>La pantalla de la fiesta</h2>
+      <p class="muted">Un toque habilita el audio. Después las canciones siguen solas.</p>
+      <button type="button" id="start">Iniciar</button>
+    </div>
+  </div>
+  <script type="module" src="/js/visor.js"></script>
+</body>
+</html>
