@@ -2,6 +2,6 @@ services:
   karaoke:
     build: .
     ports:
-      - "8082:8082"
+      - "8083:8082"
     volumes:
       - ./data:/app/data
